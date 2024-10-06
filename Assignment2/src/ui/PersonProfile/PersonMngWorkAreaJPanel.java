@@ -39,7 +39,11 @@ public class PersonMngWorkAreaJPanel extends javax.swing.JPanel {
         btnCreateAccount = new javax.swing.JButton();
         btnManageAccount = new javax.swing.JButton();
 
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+
+        btnCreateAccount.setBackground(new java.awt.Color(102, 102, 102));
         btnCreateAccount.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btnCreateAccount.setForeground(new java.awt.Color(255, 255, 255));
         btnCreateAccount.setText("Create Account");
         btnCreateAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,7 +51,9 @@ public class PersonMngWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnManageAccount.setBackground(new java.awt.Color(102, 102, 102));
         btnManageAccount.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btnManageAccount.setForeground(new java.awt.Color(255, 255, 255));
         btnManageAccount.setText("Manage Account");
         btnManageAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

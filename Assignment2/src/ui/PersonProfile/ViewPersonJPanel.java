@@ -4,17 +4,31 @@
  */
 package ui.PersonProfile;
 
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JPanel;
+import model.Person;
+import model.PersonProfile;
+
 /**
  *
  * @author siddh
  */
 public class ViewPersonJPanel extends javax.swing.JPanel {
+    private JPanel userProcessContainer;
+    private PersonProfile personProfile;
+    private Person Person;
 
     /**
      * Creates new form ViewPersonJPanel
      */
-    public ViewPersonJPanel() {
+    public ViewPersonJPanel(JPanel container, PersonProfile directory, Person person) {
         initComponents();
+         this.userProcessContainer = container;
+        this.Person = person;
+        
+        //refreshTextFields();
+        //setViewMode();
     }
 
     /**
@@ -66,12 +80,15 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         lblTitle = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
 
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+
         txtFname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFnameActionPerformed(evt);
             }
         });
 
+        lblFname.setForeground(new java.awt.Color(255, 255, 255));
         lblFname.setText(" First Name");
 
         txtLname.addActionListener(new java.awt.event.ActionListener() {
@@ -80,6 +97,7 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblLname.setForeground(new java.awt.Color(255, 255, 255));
         lblLname.setText("Last Name");
 
         txtSsn.addActionListener(new java.awt.event.ActionListener() {
@@ -88,11 +106,15 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblSsn.setForeground(new java.awt.Color(255, 255, 255));
         lblSsn.setText("Social Security Number");
 
+        lblAge.setForeground(new java.awt.Color(255, 255, 255));
         lblAge.setText("Age");
 
+        HomeAddJPanel.setBackground(new java.awt.Color(153, 153, 153));
         HomeAddJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Home Address", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+        HomeAddJPanel.setForeground(new java.awt.Color(255, 255, 255));
 
         txtHStreetAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,7 +166,7 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         HomeAddJPanelLayout.setVerticalGroup(
             HomeAddJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HomeAddJPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(60, Short.MAX_VALUE)
                 .addGroup(HomeAddJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(HomeAddJPanelLayout.createSequentialGroup()
                         .addComponent(lblHStreetAdd)
@@ -174,10 +196,12 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
                         .addComponent(lblHPno)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtHPno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
+        WorkAddJPanel.setBackground(new java.awt.Color(153, 153, 153));
         WorkAddJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Work Address", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
+        WorkAddJPanel.setForeground(new java.awt.Color(255, 255, 255));
 
         txtWStreetAdd1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,7 +253,7 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
         WorkAddJPanelLayout.setVerticalGroup(
             WorkAddJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(WorkAddJPanelLayout.createSequentialGroup()
-                .addContainerGap(75, Short.MAX_VALUE)
+                .addContainerGap(60, Short.MAX_VALUE)
                 .addGroup(WorkAddJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(WorkAddJPanelLayout.createSequentialGroup()
                         .addComponent(lblWStreetAdd1)
@@ -259,16 +283,20 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
                         .addComponent(lblWPno1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtWPno1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
+        btnCreate.setBackground(new java.awt.Color(204, 204, 204));
         btnCreate.setText("Save");
 
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setText("Update");
 
-        lblTitle.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(255, 255, 255));
         lblTitle.setText("View Person Profile");
 
+        btnBack.setBackground(new java.awt.Color(204, 204, 204));
         btnBack.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnBack.setText("<<< Back");
         btnBack.setOpaque(true);
@@ -316,7 +344,7 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
                         .addGap(36, 36, 36)
                         .addComponent(btnBack)
                         .addGap(515, 515, 515)
-                        .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(615, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -341,12 +369,10 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
                     .addComponent(txtFname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSsn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(114, 114, 114)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(HomeAddJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(WorkAddJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(144, 144, 144)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(WorkAddJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HomeAddJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(72, 72, 72)
                 .addComponent(btnCreate)
                 .addGap(53, 53, 53)
@@ -406,6 +432,13 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
+        Component[] panelStack = userProcessContainer.getComponents();
+        JPanel lastPanel = (JPanel) panelStack[panelStack.length -1];
+        ManagePersonJPanel manageAccountJPanel = (ManagePersonJPanel) lastPanel;
+        manageAccountJPanel.populateTable();
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
 
     }//GEN-LAST:event_btnBackActionPerformed
 
@@ -417,8 +450,6 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblFname;
     private javax.swing.JLabel lblHCity;
@@ -438,8 +469,6 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblWzip;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtFname;
-    private javax.swing.JTextField txtFname1;
-    private javax.swing.JTextField txtFname2;
     private javax.swing.JTextField txtHCity;
     private javax.swing.JTextField txtHPno;
     private javax.swing.JTextField txtHStreetAdd;
@@ -455,4 +484,5 @@ public class ViewPersonJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtWstate1;
     private javax.swing.JTextField txtWzip1;
     // End of variables declaration//GEN-END:variables
+
 }

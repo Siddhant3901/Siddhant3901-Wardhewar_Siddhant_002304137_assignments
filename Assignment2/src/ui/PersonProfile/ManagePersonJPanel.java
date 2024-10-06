@@ -4,7 +4,11 @@
  */
 package ui.PersonProfile;
 
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import model.Person;
 import model.PersonProfile;
 
 /**
@@ -24,6 +28,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         
         userProcessContainer = container;
         personProfile = directory;
+        populateTable();
     }
 
     /**
@@ -40,10 +45,13 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         btnViewDetails = new javax.swing.JButton();
         btnDeleteAccount = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblPersonData = new javax.swing.JTable();
         btnSearchPerson = new javax.swing.JButton();
         txtSearchPerson = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(102, 102, 102));
+
+        btnBack.setBackground(new java.awt.Color(204, 204, 204));
         btnBack.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnBack.setText("<<< Back");
         btnBack.setOpaque(true);
@@ -53,9 +61,11 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblTitle.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(255, 255, 255));
         lblTitle.setText("List of People ");
 
+        btnViewDetails.setBackground(new java.awt.Color(204, 204, 204));
         btnViewDetails.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnViewDetails.setText("View Details");
         btnViewDetails.setOpaque(true);
@@ -65,6 +75,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnDeleteAccount.setBackground(new java.awt.Color(204, 204, 204));
         btnDeleteAccount.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnDeleteAccount.setText("Delete Account");
         btnDeleteAccount.setOpaque(true);
@@ -74,8 +85,9 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             }
         });
 
-        jTable1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblPersonData.setBackground(new java.awt.Color(153, 153, 153));
+        tblPersonData.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        tblPersonData.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -83,8 +95,9 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
                 "First Name", "Last Name", "Social Security Number", "Age", "Work Address", "Home Address"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblPersonData);
 
+        btnSearchPerson.setBackground(new java.awt.Color(204, 204, 204));
         btnSearchPerson.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnSearchPerson.setText("Search ");
         btnSearchPerson.addActionListener(new java.awt.event.ActionListener() {
@@ -93,6 +106,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
             }
         });
 
+        txtSearchPerson.setBackground(new java.awt.Color(204, 204, 204));
         txtSearchPerson.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtSearchPerson.setText("Type name or street address");
         txtSearchPerson.addActionListener(new java.awt.event.ActionListener() {
@@ -148,6 +162,11 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
+        
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+
 
         
     }//GEN-LAST:event_btnBackActionPerformed
@@ -155,10 +174,27 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
     private void btnViewDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailsActionPerformed
         // TODO add your handling code here:
         
+        
     }//GEN-LAST:event_btnViewDetailsActionPerformed
 
     private void btnDeleteAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteAccountActionPerformed
         // TODO add your handling code here:
+        
+        int selectedRow = tblPersonData.getSelectedRow();
+
+        if(selectedRow >= 0){
+
+            int dialogButton = JOptionPane.YES_NO_OPTION;
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete the Person Profile", "Warning", dialogButton);
+            if (dialogResult == JOptionPane.YES_OPTION){
+                Person selectedPerson = (Person) tblPersonData.getValueAt(selectedRow, 0);
+                personProfile.deleteAccount(selectedPerson);
+                populateTable();
+            }
+
+        } else{
+            JOptionPane.showMessageDialog(null, "Please select an profile from the list", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
        
     }//GEN-LAST:event_btnDeleteAccountActionPerformed
 
@@ -177,8 +213,27 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSearchPerson;
     private javax.swing.JButton btnViewDetails;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JTable tblPersonData;
     private javax.swing.JTextField txtSearchPerson;
     // End of variables declaration//GEN-END:variables
+
+public void populateTable(){
+        
+        DefaultTableModel model = (DefaultTableModel) tblPersonData.getModel();
+        model.setRowCount(0);
+        
+        for (Person a : personProfile.getPerson()) {
+            
+            Object[] row = new Object[4];
+            row[0] = a;
+            row[1] = a.getFName();
+            row[2] = a.getLName();
+            row[3] = String.valueOf(a.getAge());
+            model.addRow(row);
+        }
+        
+    }
+
+
 }

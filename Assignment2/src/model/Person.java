@@ -14,7 +14,16 @@ public class Person {
     private String LName;
     private int Ssn;
     private double Age;
-    
+      private Address address;
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+  
 
     public String getFName() {
         return FName;

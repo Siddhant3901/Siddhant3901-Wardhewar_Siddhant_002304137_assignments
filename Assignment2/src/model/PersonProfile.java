@@ -40,5 +40,9 @@ public class PersonProfile {
         }
      return null;
  }
+
+    public void deleteAccount(Person selectedPerson) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
 

@@ -4,6 +4,8 @@
  */
 package ui;
 
+import java.awt.CardLayout;
+import javax.swing.JPanel;
 import model.PersonProfile;
 import ui.PersonProfile.PersonMngWorkAreaJPanel;
 
@@ -13,7 +15,8 @@ import ui.PersonProfile.PersonMngWorkAreaJPanel;
  */
 public class MainJFrame extends javax.swing.JFrame {
      
-    public PersonProfile personProfile ;
+    private PersonProfile personProfile ;
+    JPanel userProcessContainer;
 
     /**
      * Creates new form MainJFrame
@@ -35,16 +38,13 @@ public class MainJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         splitPane = new javax.swing.JSplitPane();
-        BottomPanel = new javax.swing.JPanel();
         topJPanel = new javax.swing.JPanel();
         btnPersonMngAction = new javax.swing.JButton();
+        bottomJPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
-
-        BottomPanel.setLayout(new java.awt.CardLayout());
-        splitPane.setRightComponent(BottomPanel);
 
         topJPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -75,11 +75,14 @@ public class MainJFrame extends javax.swing.JFrame {
 
         splitPane.setTopComponent(topJPanel);
 
+        bottomJPanel.setLayout(new java.awt.CardLayout());
+        splitPane.setRightComponent(bottomJPanel);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
+            .addComponent(splitPane)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,10 +94,10 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnPersonMngActionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPersonMngActionActionPerformed
         // TODO add your handling code here:
-        //PersonMngWorkAreaJPanel panel = new PersonMngWorkAreaJPanel(userProcessContainer, personProfile);
-        //userProcessContainer.add("PersonMngWorkArea", panel);
-        //CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        //layout.next(userProcessContainer);
+        PersonMngWorkAreaJPanel panel = new PersonMngWorkAreaJPanel(userProcessContainer, personProfile);
+        userProcessContainer.add("PersonMngWorkArea", panel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
         
     }//GEN-LAST:event_btnPersonMngActionActionPerformed
 
@@ -134,7 +137,7 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel BottomPanel;
+    private javax.swing.JPanel bottomJPanel;
     private javax.swing.JButton btnPersonMngAction;
     private javax.swing.JSplitPane splitPane;
     private javax.swing.JPanel topJPanel;
