@@ -4,17 +4,26 @@
  */
 package ui.PersonProfile;
 
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import model.PersonProfile;
+
 /**
  *
  * @author siddh
  */
 public class PersonMngWorkAreaJPanel extends javax.swing.JPanel {
+    JPanel userProcessContainer;
+    PersonProfile personProfile;
 
     /**
      * Creates new form PersonMngWorkAreaJPanel
      */
-    public PersonMngWorkAreaJPanel() {
+    public PersonMngWorkAreaJPanel(JPanel container, PersonProfile directory) {
         initComponents();
+        
+        userProcessContainer = container;
+        personProfile = directory;
     }
 
     /**
@@ -91,11 +100,23 @@ public class PersonMngWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnCreateAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateAccountActionPerformed
         // TODO add your handling code here:
+        
+        CreatePersonJPanel panel = new CreatePersonJPanel(userProcessContainer, personProfile);
+        userProcessContainer.add("CreatePersonJPanel", panel);
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
        
     }//GEN-LAST:event_btnCreateAccountActionPerformed
 
     private void btnManageAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageAccountActionPerformed
         // TODO add your handling code here:
+        
+         ManagePersonJPanel panel = new ManagePersonJPanel(userProcessContainer, personProfile);
+        userProcessContainer.add("ManagePersonJPanel", panel);
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
 
        
     }//GEN-LAST:event_btnManageAccountActionPerformed

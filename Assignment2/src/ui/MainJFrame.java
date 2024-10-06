@@ -5,6 +5,7 @@
 package ui;
 
 import model.PersonProfile;
+import ui.PersonProfile.PersonMngWorkAreaJPanel;
 
 /**
  *
@@ -60,16 +61,16 @@ public class MainJFrame extends javax.swing.JFrame {
         topJPanelLayout.setHorizontalGroup(
             topJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topJPanelLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(btnPersonMngAction)
-                .addContainerGap(198, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(btnPersonMngAction, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(597, Short.MAX_VALUE))
         );
         topJPanelLayout.setVerticalGroup(
             topJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topJPanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(23, 23, 23)
                 .addComponent(btnPersonMngAction)
-                .addContainerGap(212, Short.MAX_VALUE))
+                .addContainerGap(211, Short.MAX_VALUE))
         );
 
         splitPane.setTopComponent(topJPanel);
@@ -78,11 +79,11 @@ public class MainJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane)
+            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
         );
 
         pack();
@@ -90,6 +91,10 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnPersonMngActionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPersonMngActionActionPerformed
         // TODO add your handling code here:
+        //PersonMngWorkAreaJPanel panel = new PersonMngWorkAreaJPanel(userProcessContainer, personProfile);
+        //userProcessContainer.add("PersonMngWorkArea", panel);
+        //CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        //layout.next(userProcessContainer);
         
     }//GEN-LAST:event_btnPersonMngActionActionPerformed
 
