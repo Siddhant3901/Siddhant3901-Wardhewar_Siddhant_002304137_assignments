@@ -16,7 +16,8 @@ import ui.PersonProfile.PersonMngWorkAreaJPanel;
 public class MainJFrame extends javax.swing.JFrame {
      
     private PersonProfile personProfile ;
-    JPanel userProcessContainer;
+
+   
 
     /**
      * Creates new form MainJFrame
@@ -40,15 +41,19 @@ public class MainJFrame extends javax.swing.JFrame {
         splitPane = new javax.swing.JSplitPane();
         topJPanel = new javax.swing.JPanel();
         btnPersonMngAction = new javax.swing.JButton();
-        bottomJPanel = new javax.swing.JPanel();
+        userProcessContainer = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
+        topJPanel.setBackground(new java.awt.Color(204, 204, 204));
+        topJPanel.setForeground(new java.awt.Color(255, 255, 255));
         topJPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        btnPersonMngAction.setBackground(new java.awt.Color(102, 102, 102));
         btnPersonMngAction.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btnPersonMngAction.setForeground(new java.awt.Color(255, 255, 255));
         btnPersonMngAction.setText("Open Person Profile Work Area");
         btnPersonMngAction.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,20 +68,21 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(topJPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnPersonMngAction, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(597, Short.MAX_VALUE))
+                .addContainerGap(1685, Short.MAX_VALUE))
         );
         topJPanelLayout.setVerticalGroup(
             topJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topJPanelLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(btnPersonMngAction)
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addContainerGap(1005, Short.MAX_VALUE))
         );
 
         splitPane.setTopComponent(topJPanel);
 
-        bottomJPanel.setLayout(new java.awt.CardLayout());
-        splitPane.setRightComponent(bottomJPanel);
+        userProcessContainer.setBackground(new java.awt.Color(153, 153, 153));
+        userProcessContainer.setLayout(new java.awt.CardLayout());
+        splitPane.setRightComponent(userProcessContainer);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,16 +92,17 @@ public class MainJFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
+            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPersonMngActionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPersonMngActionActionPerformed
+
         // TODO add your handling code here:
         PersonMngWorkAreaJPanel panel = new PersonMngWorkAreaJPanel(userProcessContainer, personProfile);
-        userProcessContainer.add("PersonMngWorkArea", panel);
+        userProcessContainer.add("PersonMngWorkAreaJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         
@@ -137,9 +144,9 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel bottomJPanel;
     private javax.swing.JButton btnPersonMngAction;
     private javax.swing.JSplitPane splitPane;
     private javax.swing.JPanel topJPanel;
+    private javax.swing.JPanel userProcessContainer;
     // End of variables declaration//GEN-END:variables
 }

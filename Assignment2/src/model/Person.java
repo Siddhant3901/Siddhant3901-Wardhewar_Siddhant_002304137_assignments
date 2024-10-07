@@ -14,13 +14,35 @@ public class Person {
     private String LName;
     private int Ssn;
     private double Age;
-      private Address address;
+    private Address address;
+    
 
     public Address getAddress() {
         return address;
     }
 
     public void setAddress(Address address) {
+        this.address = address;
+    }
+    
+    public void setAddress(String HStreetAdd,String HUnNo,String HCity, String Hstate,Long Hzip ,Integer HPno, String WStreetAdd,String WUnNo,String WCity,String Wstate,Long Wzip,Integer WPno){
+        
+        Address address = new Address();
+        
+        address.setHCity(HCity);
+        address.setHStreetAdd(HStreetAdd);
+        address.setHUnNo(HUnNo);
+        address.setHstate(Hstate);
+        address.setHzip(0);
+        address.setHPno(0);
+        
+        address.setWStreetAdd(WStreetAdd);
+        address.setWUnNo(WUnNo);
+        address.setWCity(WCity);
+        address.setWstate(Wstate);
+        address.setWPno(0);
+        address.setWzip(0);
+        
         this.address = address;
     }
   

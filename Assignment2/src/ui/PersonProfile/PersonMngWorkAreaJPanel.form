@@ -56,7 +56,7 @@
                       <Component id="btnManageAccount" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnCreateAccount" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="820" max="32767" attributes="0"/>
+                  <EmptySpace pref="1772" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -67,7 +67,7 @@
                   <Component id="btnCreateAccount" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Component id="btnManageAccount" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="391" max="32767" attributes="0"/>
+                  <EmptySpace pref="979" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
