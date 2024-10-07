@@ -56,11 +56,6 @@
                           <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="HomeAddJPanel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                                  <Component id="WorkAddJPanel" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="lblFname" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtFname" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
@@ -82,10 +77,17 @@
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="501" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="btnCreate" pref="102" max="32767" attributes="0"/>
-                                      <Component id="jButton1" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="HomeAddJPanel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="380" max="-2" attributes="0"/>
+                                          <Component id="btnSave" min="-2" pref="102" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="btnUpdate" min="-2" pref="102" max="-2" attributes="0"/>
+                                      <Component id="WorkAddJPanel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -128,16 +130,17 @@
                       <Component id="txtAge" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtSsn" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnSave" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="WorkAddJPanel" min="-2" max="-2" attributes="0"/>
                       <Component id="HomeAddJPanel" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                  <Component id="btnCreate" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="249" max="32767" attributes="0"/>
+                  <EmptySpace pref="420" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -352,20 +355,20 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="90" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtWStreetAdd1" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
-                          <Component id="lblWStreetAdd1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtWCity1" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
-                          <Component id="lblWCity1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtWzip1" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                          <Component id="txtWStreetAdd" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                          <Component id="lblWStreetAdd" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtWCity" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                          <Component id="lblWCity" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtWzip" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
                           <Component id="lblWzip" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtWPno1" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
-                          <Component id="lblWPno1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtWstate1" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
-                          <Component id="lblWstate1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblWUnNo1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtWPno" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                          <Component id="lblWPno" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtWstate" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                          <Component id="lblWstate" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblWUnNo" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="txtWUnNo" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
@@ -378,12 +381,12 @@
                       <EmptySpace pref="60" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="lblWStreetAdd1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblWStreetAdd" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtWStreetAdd1" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtWStreetAdd" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="lblWUnNo1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblWUnNo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtWUnNo" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -391,14 +394,14 @@
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="lblWCity1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblWCity" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtWCity1" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtWCity" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="lblWstate1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblWstate" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtWstate1" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtWstate" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -406,12 +409,12 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="lblWzip" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtWzip1" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtWzip" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="lblWPno1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblWPno" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtWPno1" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtWPno" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="60" max="32767" attributes="0"/>
@@ -420,71 +423,77 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="txtWStreetAdd1">
+            <Component class="javax.swing.JTextField" name="txtWStreetAdd">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtWStreetAdd1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtWStreetAddActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblWStreetAdd1">
+            <Component class="javax.swing.JLabel" name="lblWStreetAdd">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Street Address"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtWUnNo">
             </Component>
-            <Component class="javax.swing.JLabel" name="lblWUnNo1">
+            <Component class="javax.swing.JLabel" name="lblWUnNo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Unit Number"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtWCity1">
+            <Component class="javax.swing.JTextField" name="txtWCity">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtWCity1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtWCityActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblWCity1">
+            <Component class="javax.swing.JLabel" name="lblWCity">
               <Properties>
                 <Property name="text" type="java.lang.String" value="City"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtWzip1">
+            <Component class="javax.swing.JTextField" name="txtWzip">
             </Component>
             <Component class="javax.swing.JLabel" name="lblWzip">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Zip Code"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtWstate1">
+            <Component class="javax.swing.JTextField" name="txtWstate">
             </Component>
-            <Component class="javax.swing.JLabel" name="lblWstate1">
+            <Component class="javax.swing.JLabel" name="lblWstate">
               <Properties>
                 <Property name="text" type="java.lang.String" value="State"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtWPno1">
+            <Component class="javax.swing.JTextField" name="txtWPno">
             </Component>
-            <Component class="javax.swing.JLabel" name="lblWPno1">
+            <Component class="javax.swing.JLabel" name="lblWPno">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Phone Number"/>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="btnCreate">
+        <Component class="javax.swing.JButton" name="btnSave">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Save"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="btnUpdate">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Update"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblTitle">
           <Properties>

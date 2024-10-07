@@ -8,6 +8,7 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import model.Address;
 import model.Person;
 import model.PersonProfile;
 
@@ -174,32 +175,62 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
     private void btnViewDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailsActionPerformed
         // TODO add your handling code here:
         
+        int selectedRow = tblPersonData.getSelectedRow();
+        
+        if(selectedRow >= 0){
+            Person selectedPerson = (Person) tblPersonData.getValueAt(selectedRow, 0);
+            
+            ViewPersonJPanel panel = new ViewPersonJPanel(userProcessContainer, personProfile, selectedPerson);
+            userProcessContainer.add("ViewPersonJPanel", panel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+            
+        } else{
+            JOptionPane.showMessageDialog(null, "Please select a profile from the list view", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        
         
     }//GEN-LAST:event_btnViewDetailsActionPerformed
 
     private void btnDeleteAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteAccountActionPerformed
         // TODO add your handling code here:
+      int selectedRow = tblPersonData.getSelectedRow();
         
-        int selectedRow = tblPersonData.getSelectedRow();
-
         if(selectedRow >= 0){
-
+            
             int dialogButton = JOptionPane.YES_NO_OPTION;
-            int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete the Person Profile", "Warning", dialogButton);
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete the selected profile?", "Warning", dialogButton);
             if (dialogResult == JOptionPane.YES_OPTION){
                 Person selectedPerson = (Person) tblPersonData.getValueAt(selectedRow, 0);
-                personProfile.deleteAccount(selectedPerson);
+                personProfile.deletePerson(selectedPerson);
                 populateTable();
             }
-
+            
         } else{
-            JOptionPane.showMessageDialog(null, "Please select an profile from the list", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select a profile from the list", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-       
     }//GEN-LAST:event_btnDeleteAccountActionPerformed
 
     private void btnSearchPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchPersonActionPerformed
         // TODO add your handling code here:
+        if (!txtSearchPerson.getText().isBlank()){
+
+            String search = txtSearchPerson.getText();
+            Person foundPerson = personProfile.searchPerson(search);
+
+            if (foundPerson != null){
+
+                ViewPersonJPanel panel = new ViewPersonJPanel(userProcessContainer, personProfile, foundPerson);
+                userProcessContainer.add("ViewAccountJPanel",panel);
+                CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+                layout.next(userProcessContainer);
+            } else{
+                JOptionPane.showMessageDialog(null, "Person not found. Please check the Details and try again", "Warning", JOptionPane.WARNING_MESSAGE);
+            }
+
+        } else{
+            JOptionPane.showMessageDialog(null, "Please type the Person Details to view", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btnSearchPersonActionPerformed
 
     private void txtSearchPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchPersonActionPerformed
@@ -223,17 +254,28 @@ public void populateTable(){
         DefaultTableModel model = (DefaultTableModel) tblPersonData.getModel();
         model.setRowCount(0);
         
-        for (Person a : personProfile.getPerson()) {
+        for (Person p : personProfile.getPerson()) {
             
-            Object[] row = new Object[4];
-            row[0] = a;
-            row[1] = a.getFName();
-            row[2] = a.getLName();
-            row[3] = String.valueOf(a.getAge());
+            Object[] row = new Object[6];
+            row[0] = p;
+            row[1] = p.getLName();
+            row[2] = String.valueOf(p.getSsn());
+            row[3] = String.valueOf(p.getAge());
+            Address had = p.getAddress();
+            String hadr ="null";
+            if (had!=null){
+                 hadr = had.getHStreetAdd()+ ", " + had.getHUnNo()+ ", " + had.getHCity()+ ", " + had.getHstate()+ " " + had.getHzip()+ " " + had.getHPno();
+          
+            }
+             row[4] = hadr;
+            Address wad = p.getAddress();
+            String wadr ="null";
+            if (had!=null){
+            wadr = wad.getWStreetAdd()+ ", " + wad.getWUnNo()+ ", " + wad.getWCity()+ ", " + wad.getWstate()+ " " + wad.getWzip()+ " " + wad.getWPno();
+            }
+            row[5] = wadr;
             model.addRow(row);
         }
-        
-    }
-
-
 }
+}
+

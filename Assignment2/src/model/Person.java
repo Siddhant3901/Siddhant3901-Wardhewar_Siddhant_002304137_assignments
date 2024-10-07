@@ -78,7 +78,10 @@ public class Person {
     public void setAge(double Age) {
         this.Age = Age;
     }
-
+@Override
+    public String toString(){
+        return getFName();
+    }
 
 }
 

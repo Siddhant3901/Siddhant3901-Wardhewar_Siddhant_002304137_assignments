@@ -6,6 +6,7 @@ package ui;
 
 import java.awt.CardLayout;
 import javax.swing.JPanel;
+import model.Person;
 import model.PersonProfile;
 import ui.PersonProfile.PersonMngWorkAreaJPanel;
 
@@ -26,6 +27,7 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
         this.personProfile = new PersonProfile();
         
+        genrateDemoData();
        
     }
 
@@ -149,4 +151,43 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel topJPanel;
     private javax.swing.JPanel userProcessContainer;
     // End of variables declaration//GEN-END:variables
+
+private void genrateDemoData(){
+    Person fPerson = personProfile.addPerson();
+        fPerson.setFName("ngre");
+        fPerson.setLName("Nanfr");
+        fPerson.setAge(65);
+        fPerson.setSsn(1234567678);
+        fPerson.setAddress("78 bksdgn", "Unit 3", "Boston", "MA", 2119L, 67126712, "92 Bragdon", "Unit 3", "Boston", "MA", 2119L, 2971278);
+        
+        Person sPerson = personProfile.addPerson();
+        sPerson.setFName("ibidf");
+        sPerson.setLName("hjdf");
+        sPerson.setAge(5);
+        sPerson.setSsn(1234567890);
+        sPerson.setAddress("963 hsg", "Unit 3", "Boston", "MA", 2119L, 67126652, "92 Bragdon", "Unit 3", "Boston", "MA", 2119L, 2971278);
+        
+        
+        Person tPerson = personProfile.addPerson();
+        tPerson.setFName("abi");
+        tPerson.setLName("uie");
+        tPerson.setAge(2);
+        tPerson.setSsn(123456834);
+        tPerson.setAddress("78 bksdgn", "Unit 3", "Boston", "MA", 2119L, 67126712, "92 Bragdon", "Unit 3", "Boston", "MA", 2119L, 2971278);
+        
+        Person frPerson = personProfile.addPerson();
+        frPerson.setFName("sid");
+        frPerson.setLName("w");
+        frPerson.setAge(20);
+        frPerson.setSsn(1567887353);
+        frPerson.setAddress("78 bksdgn", "Unit 3", "Boston", "MA", 2119L, 67126712, "92 Bragdon", "Unit 3", "Boston", "MA", 2119L, 2971278);
+        
+         Person fiPerson = personProfile.addPerson();
+        fiPerson.setFName("Varun");
+        fiPerson.setLName("Nayyar");
+        fiPerson.setAge(23);
+        fiPerson.setSsn(123456875);
+        fiPerson.setAddress("78 bksdgn", "Unit 3", "Boston", "MA", 2119L, 67126712, "92 Bragdon", "Unit 3", "Boston", "MA", 2119L, 2971278);
+        
+}
 }
