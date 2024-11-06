@@ -46,12 +46,12 @@ public class Info5001UniversityExample {
 
         // Faculty Directory Management
         FacultyDirectory facultyDirectory = department.getFacultyDirectory();
-        FacultyProfile faculty1 = facultyDirectory.newFacultyProfile(new Person("Prof. Ruben Amorim"));
-        FacultyProfile faculty2 = facultyDirectory.newFacultyProfile(new Person("Prof. Carlo Ancelotti"));
-        FacultyProfile faculty3 = facultyDirectory.newFacultyProfile(new Person("Prof. Jurgen Klopp"));
-        FacultyProfile faculty4 = facultyDirectory.newFacultyProfile(new Person("Prof. Mikel Arteta"));
-        FacultyProfile faculty5 = facultyDirectory.newFacultyProfile(new Person("Prof. Xavi Hernandez"));
-        FacultyProfile faculty6 = facultyDirectory.newFacultyProfile(new Person("Prof. Hansi Flick"));
+        FacultyProfile faculty1 = facultyDirectory.newFacultyProfile(new Person("Prof. Kal Bugrara"));
+        FacultyProfile faculty2 = facultyDirectory.newFacultyProfile(new Person("Prof. Mike Tyson"));
+        FacultyProfile faculty3 = facultyDirectory.newFacultyProfile(new Person("Prof. Siddhant Wardhewar"));
+        FacultyProfile faculty4 = facultyDirectory.newFacultyProfile(new Person("Prof. Flyod Mayweather"));
+        FacultyProfile faculty5 = facultyDirectory.newFacultyProfile(new Person("Prof. Mauhammad Ali"));
+        FacultyProfile faculty6 = facultyDirectory.newFacultyProfile(new Person("Prof. Andrew Tate"));
 
         // Course Schedule Management for Fall 2023 Semester
         CourseSchedule courseSchedule = department.newCourseSchedule("Fall2024");
