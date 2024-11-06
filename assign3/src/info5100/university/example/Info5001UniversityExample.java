@@ -24,7 +24,7 @@ import java.util.Map;
 
 /**
  *
- * @author tawde
+ * @author kal bugrara
  */
 public class Info5001UniversityExample {
 
