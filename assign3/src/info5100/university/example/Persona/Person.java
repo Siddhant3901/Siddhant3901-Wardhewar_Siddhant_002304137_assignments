@@ -25,4 +25,7 @@ public class Person {
         return false;
     }
     
+    public String getName() {
+        return id;
+    }
 }

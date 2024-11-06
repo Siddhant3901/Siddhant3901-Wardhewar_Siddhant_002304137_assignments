@@ -36,5 +36,9 @@ public class Course {
         return credits;
     
 }
+    // In Course class
+public String getCourseName() {
+    return this.name; // Ensure you have a variable courseName defined
+}
     
 }

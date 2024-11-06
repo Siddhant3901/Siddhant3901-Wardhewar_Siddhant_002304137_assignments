@@ -18,7 +18,7 @@ public class CourseOffer {
 
     Course course;
     ArrayList<Seat> seatlist;
-    FacultyAssignment facultyassignment; //the professor teaching the class
+    FacultyAssignment facultyassignment;
 
     public CourseOffer(Course c) {
         course = c;
@@ -27,7 +27,7 @@ public class CourseOffer {
      
     public void AssignAsTeacher(FacultyProfile fp) {
 
-         facultyassignment = fp.AssignAsTeacher(this); //assign the teacher for the course offer
+        facultyassignment = new FacultyAssignment(fp, this);
     }
 
     public FacultyProfile getFacultyProfile() {
@@ -41,8 +41,8 @@ public class CourseOffer {
     public void generatSeats(int n) {
 
         for (int i = 0; i < n; i++) {
-            Seat seat = new Seat(this, i);
-            seatlist.add(seat);
+
+            seatlist.add(new Seat(this, i));
 
         }
 
@@ -56,7 +56,7 @@ public class CourseOffer {
                 return s;
             }
         }
-        return null; // can't find an empty seat
+        return null;
     }
 
 

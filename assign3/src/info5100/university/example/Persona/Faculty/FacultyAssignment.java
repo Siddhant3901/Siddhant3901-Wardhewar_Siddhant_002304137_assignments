@@ -31,5 +31,9 @@ public class FacultyAssignment {
     public FacultyProfile getFacultyProfile(){
         return facultyprofile;
     }
+
+    public void setProfRating(double d) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

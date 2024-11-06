@@ -15,17 +15,27 @@ import java.util.ArrayList;
  */
 public class CourseSchedule {
 
-    CourseCatalog coursecatalog; 
-
+    CourseCatalog coursecatalog;
+    private ArrayList<CourseOffer> courseOffers;    
     ArrayList<CourseOffer> schedule;
-    String semester; 
+    String semester;
 
     public CourseSchedule(String s, CourseCatalog cc) {
         semester = s;
         coursecatalog = cc;
         schedule = new ArrayList();
+        courseOffers = new ArrayList<>();
 
     }
+    
+    public void addCourseOffer(CourseOffer courseOffer) {
+        courseOffers.add(courseOffer);
+    }
+    
+    public CourseOffer[] getAllCourseOffers() {
+        return courseOffers.toArray(new CourseOffer[0]);
+    }
+
 
     public CourseOffer newCourseOffer(String  n) {
 
